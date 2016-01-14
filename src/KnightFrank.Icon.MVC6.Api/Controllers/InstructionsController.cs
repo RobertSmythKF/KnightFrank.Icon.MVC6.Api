@@ -191,8 +191,6 @@ namespace KnightFrank.Icon.MVC6.Api.Controllers
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = $"An error occurred - {ex.Message}" });
             }
-
-            return Json(si);
         }
 
         public class SearchInput
