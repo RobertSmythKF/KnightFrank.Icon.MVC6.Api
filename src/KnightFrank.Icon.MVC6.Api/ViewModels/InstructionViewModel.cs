@@ -26,6 +26,6 @@ namespace KnightFrank.Icon.MVC6.Api.ViewModels
         public string County { get; set; }
 
         [Required]
-        public string Postcode { get; }
+        public string Postcode { get; set; }
     }
 }
