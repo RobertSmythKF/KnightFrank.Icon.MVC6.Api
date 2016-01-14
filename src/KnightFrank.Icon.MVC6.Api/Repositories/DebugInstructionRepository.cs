@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using KnightFrank.Icon.MVC6.Api.Models;
+using System;
 
 namespace KnightFrank.Icon.MVC6.Api.Repositories
 {
@@ -37,12 +38,18 @@ namespace KnightFrank.Icon.MVC6.Api.Repositories
         {
             Instruction instructionToDelete = _instructions.FirstOrDefault(i => i.Id == id);
 
+            if (instructionToDelete == null)
+                throw new Exception($"Instruction with Id {id} not found");
+
             if(instructionToDelete != null)
                 _instructions.Remove(instructionToDelete);
         }
 
         public void Delete(Instruction instrution)
         {
+            if (instrution == null)
+                throw new Exception("Instruction was not supplied");
+
             Delete(instrution.Id);
         }
 
