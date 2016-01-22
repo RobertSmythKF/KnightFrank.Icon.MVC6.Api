@@ -17,6 +17,8 @@ namespace KnightFrank.Icon.MVC6.Api.Controllers
     [Route("/api/Instructions")]
     public class InstructionsController : Controller
     {
+
+
         public InstructionsController(IInstructionRepository instructionsRepository)
         {
             _instructionsRepository = instructionsRepository;
@@ -27,6 +29,7 @@ namespace KnightFrank.Icon.MVC6.Api.Controllers
         {
             try
             {
+                // Pull all instructions...
                 var mvInstructionList = Mapper.Map<IEnumerable<InstructionViewModel>>(_instructionsRepository.GetAll());
 
                 Response.StatusCode = (int)HttpStatusCode.OK;
